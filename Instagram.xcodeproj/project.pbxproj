@@ -30,6 +30,7 @@
 		2F3A46A1296FAE8D0074E632 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A46A0296FAE8D0074E632 /* SearchViewController.swift */; };
 		2F3A46A3296FAF8C0074E632 /* PostEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A46A2296FAF8B0074E632 /* PostEditorViewController.swift */; };
 		2F3A46A5296FAFB70074E632 /* PublishPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3A46A4296FAFB70074E632 /* PublishPostViewController.swift */; };
+		2F407D3A297F847C0046D308 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F407D39297F847B0046D308 /* Extensions.swift */; };
 		2F6FA2DE2978F0AF00692B6F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F6FA2DD2978F0AF00692B6F /* GoogleService-Info.plist */; };
 		2F6FA2E12979021B00692B6F /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FA2E02979021B00692B6F /* DatabaseManager.swift */; };
 		2F6FA2E3297902E400692B6F /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6FA2E2297902E300692B6F /* AuthManager.swift */; };
@@ -87,6 +88,7 @@
 		2F3A46A0296FAE8D0074E632 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		2F3A46A2296FAF8B0074E632 /* PostEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditorViewController.swift; sourceTree = "<group>"; };
 		2F3A46A4296FAFB70074E632 /* PublishPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPostViewController.swift; sourceTree = "<group>"; };
+		2F407D39297F847B0046D308 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2F6FA2DD2978F0AF00692B6F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F6FA2E02979021B00692B6F /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		2F6FA2E2297902E300692B6F /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				2F6FA2E02979021B00692B6F /* DatabaseManager.swift */,
 				2F6FA2E2297902E300692B6F /* AuthManager.swift */,
 				2F6FA2E42979032800692B6F /* StorageManager.swift */,
+				2F407D39297F847B0046D308 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				2F3A4688296FA9C80074E632 /* ExploreViewController.swift in Sources */,
 				2F3A4699296FAD0B0074E632 /* ProfileChangeViewController.swift in Sources */,
 				2F3A4693296FAC460074E632 /* LoginViewController.swift in Sources */,
+				2F407D3A297F847C0046D308 /* Extensions.swift in Sources */,
 				2F3A469F296FAE240074E632 /* SearchResultViewController.swift in Sources */,
 				2F3A468E296FAA270074E632 /* ProfileViewController.swift in Sources */,
 				2F6FA2E3297902E400692B6F /* AuthManager.swift in Sources */,

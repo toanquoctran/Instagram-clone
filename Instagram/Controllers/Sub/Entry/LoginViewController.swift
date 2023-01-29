@@ -57,6 +57,9 @@ class LoginViewController: UIViewController {
     }()
     
     private let termsButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Terms of Service", for: .normal)
+        button.setTitleColor(.secondaryLabel, for: .normal)
         return UIButton()
     }()
     
@@ -81,6 +84,15 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loginButton.addTarget(self, action: #selector(didTapLoginButton), for: .touchUpInside)
+        
+        createAccountButton.addTarget(self, action: #selector(didTapCreateAccountButton), for: .touchUpInside)
+        
+        termsButton.addTarget(self, action: #selector(didTapTermsButton), for: .touchUpInside)
+        
+        privacyButton.addTarget(self, action: #selector(didTapPrivacyButton), for: .touchUpInside)
+        
         usernameEmailField.delegate = self
         passwordField.delegate = self
         addSubviews()

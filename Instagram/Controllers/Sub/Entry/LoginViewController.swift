@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
         field.layer.masksToBounds = true
         field.layer.cornerRadius = Constants.cornerRadius
         field.backgroundColor = .secondarySystemBackground
+        field.layer.borderWidth = 1.0
+        field.layer.borderColor = UIColor.secondaryLabel.cgColor
         return field
     }()
     
@@ -31,7 +33,7 @@ class LoginViewController: UIViewController {
         let field = UITextField()
         field.isSecureTextEntry = true
         field.placeholder = "Password"
-        field.returnKeyType = .next
+        field.returnKeyType = .continue
         field.leftViewMode = .always
         field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         field.autocapitalizationType = .none
@@ -39,6 +41,8 @@ class LoginViewController: UIViewController {
         field.layer.masksToBounds = true
         field.layer.cornerRadius = Constants.cornerRadius
         field.backgroundColor = .secondarySystemBackground
+        field.layer.borderWidth = 1.0
+        field.layer.borderColor = UIColor.secondaryLabel.cgColor
         return field
     }()
     
@@ -70,12 +74,15 @@ class LoginViewController: UIViewController {
     private let headerView: UIView = {
         let header = UIView()
         header.clipsToBounds = true
-        header.backgroundColor = .red
+        let backgroundImageView = UIImageView(image: UIImage(named: "gradient"))
+        header.addSubview(backgroundImageView)
         return header
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameEmailField.delegate = self
+        passwordField.delegate = self
         addSubviews()
         view.backgroundColor = .systemBackground
     }
@@ -83,7 +90,34 @@ class LoginViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        headerView.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.width, height: view.height / 3.0)
+        headerView.frame = CGRect(x: 0, y: 0.0, width: view.width, height: view.height / 3.0)
+        
+        usernameEmailField.frame = CGRect(x: 25, y: headerView.bottom + 10, width: view.width - 50, height: 52.0)
+        
+        passwordField.frame = CGRect(x: 25, y: usernameEmailField.bottom + 10, width: view.width - 50, height: 52.0)
+        
+        loginButton.frame = CGRect(x: 25, y: passwordField.bottom + 10, width: view.width - 50, height: 52.0)
+        
+        passwordField.frame = CGRect(x: 25, y: loginButton.bottom + 10, width: view.width - 50, height: 52.0)
+        
+        configureHeaderView()
+    }
+    
+    private func configureHeaderView() {
+        guard headerView.subviews.count == 1 else {
+            return
+        }
+        
+        guard let backgroundView = headerView.subviews.first else {
+            return
+        }
+        
+        backgroundView.frame = headerView.bounds
+        
+        let imageView = UIImageView(image: UIImage(named: "text"))
+        headerView.addSubview(imageView)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame = CGRect(x: headerView.width / 4.0, y: view.safeAreaInsets.top, width: headerView.width, height: headerView.height - view.safeAreaInsets.top)
     }
     
     private func addSubviews() {
@@ -101,4 +135,16 @@ class LoginViewController: UIViewController {
     @objc private func didTapPrivacyButton() {}
     @objc private func didTapCreateAccountButton() {}
     
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == usernameEmailField {
+            passwordField.becomeFirstResponder()
+        } else if textField == passwordField {
+            didTapLoginButton()
+        }
+        
+        return true
+    }
 }
